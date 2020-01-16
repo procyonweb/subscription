@@ -1,0 +1,54 @@
+{
+    "name": "procyonweb/subscription",
+    "description": "Awesome subscription and payment management",
+    "keywords": [
+        "procyonweb",
+        "subscription"
+    ],
+    "homepage": "https://github.com/procyonweb/subscription",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Gabor Koszegi",
+            "email": "gabor@procyonweb.lu",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "6.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "4.3.*",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Procyonweb\\Subscription\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Procyonweb\\Subscription\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Procyonweb\\Subscription\\SubscriptionServiceProvider"
+            ],
+            "aliases": {
+                "Subscription": "Procyonweb\\Subscription\\SubscriptionFacade"
+            }
+        }
+    }
+}
